@@ -1,0 +1,21 @@
+<?php declare(strict_types=1);
+
+/**
+ * Copyright (C) Brian Faust
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Cline\Settings\Exceptions;
+
+/**
+ * @author Brian Faust <brian@cline.sh>
+ */
+final class StoredSettingTransactionDidNotReturnRecordException extends SettingsRepositoryException
+{
+    public static function duringSave(): self
+    {
+        return new self('Settings repository transaction did not return a stored record.');
+    }
+}

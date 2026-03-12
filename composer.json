@@ -1,0 +1,73 @@
+{
+    "name": "cline/settings",
+    "description": "Multi-owner typed settings for Laravel applications",
+    "license": "MIT",
+    "keywords": [
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@cline.sh"
+        }
+    ],
+    "require": {
+        "php": "^8.5.0",
+        "cline/morphism": "^2.0.1",
+        "cline/struct": "^1.0.3",
+        "cline/variable-keys": "^2.0.2",
+        "facade/ignition-contracts": "^1.0.2",
+        "laravel/framework": "^10.0 || ^11.0 || ^12.54.1 || ^13.0",
+        "spatie/laravel-package-tools": "^1.93.0"
+    },
+    "require-dev": {
+        "cline/coding-standard": "^1.7.0",
+        "orchestra/testbench": "^10.9",
+        "symfony/var-dumper": "^7.4.6"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Cline\\Settings\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Settings": "Cline\\Settings\\Facades\\Settings"
+            },
+            "providers": [
+                "Cline\\Settings\\SettingsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "vendor/bin/ecs check --fix",
+        "refactor": "rector",
+        "test": [
+            "@test:lint",
+            "@test:type-coverage",
+            "@test:unit",
+            "@test:types",
+            "@test:refactor"
+        ],
+        "test:lint": "vendor/bin/ecs check",
+        "test:refactor": "rector --dry-run",
+        "test:type-coverage": "pest --parallel --min=80 --type-coverage",
+        "test:types": "phpstan",
+        "test:unit": "pest --parallel --min=80 --coverage"
+    }
+}

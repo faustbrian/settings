@@ -1,0 +1,26 @@
+{
+    "entries": [
+        {
+            "settings_class": "Tests\\Fixtures\\Settings\\ShipmentPricingSettings",
+            "settings_namespace": "shipment.pricing",
+            "property": "callBeforeDeliveryFee",
+            "value": 3.5,
+            "owner_type": "business_entity",
+            "owner_id": "1",
+            "boundary_type": null,
+            "boundary_id": null,
+            "version": 1
+        },
+        {
+            "settings_class": "Tests\\Fixtures\\Settings\\ShipmentPricingSettings",
+            "settings_namespace": "shipment.pricing",
+            "property": "returnFreightDocFee",
+            "value": 0.3,
+            "owner_type": "business_entity",
+            "owner_id": "1",
+            "boundary_type": null,
+            "boundary_id": null,
+            "version": 1
+        }
+    ]
+}
