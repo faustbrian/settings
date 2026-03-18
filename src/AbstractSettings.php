@@ -28,7 +28,7 @@ use Cline\Struct\AbstractData;
  * @author Brian Faust <brian@cline.sh>
  * @psalm-immutable
  */
-abstract readonly class Settings extends AbstractData
+abstract readonly class AbstractSettings extends AbstractData
 {
     /**
      * Return static fallback values for this settings class.

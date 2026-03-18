@@ -9,9 +9,9 @@
 
 namespace Cline\Settings\Exceptions;
 
-use InvalidArgumentException;
+use LogicException;
 
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-abstract class SettingsAuditException extends InvalidArgumentException implements SettingsException {}
+abstract class AbstractSettingsMigrationException extends LogicException implements SettingsExceptionInterface {}

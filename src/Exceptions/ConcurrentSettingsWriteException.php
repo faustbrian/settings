@@ -22,7 +22,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class ConcurrentSettingsWriteException extends RuntimeException implements SettingsException
+final class ConcurrentSettingsWriteException extends RuntimeException implements SettingsExceptionInterface
 {
     /**
      * Create an exception describing the failed optimistic write.

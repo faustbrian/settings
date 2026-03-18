@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Exceptions\SettingsException;
-use Cline\Settings\Exceptions\SettingsRepositoryException;
+use Cline\Settings\Exceptions\AbstractSettingsRepositoryException;
+use Cline\Settings\Exceptions\SettingsExceptionInterface;
 
 describe('settings repository exception', function (): void {
     test('is the base logic exception for repository failures', function (): void {
-        $exception = new class('repository failure') extends SettingsRepositoryException {};
+        $exception = new class('repository failure') extends AbstractSettingsRepositoryException {};
 
-        expect($exception)->toBeInstanceOf(SettingsRepositoryException::class)
+        expect($exception)->toBeInstanceOf(AbstractSettingsRepositoryException::class)
             ->toBeInstanceOf(LogicException::class)
-            ->toBeInstanceOf(SettingsException::class)
+            ->toBeInstanceOf(SettingsExceptionInterface::class)
             ->and($exception->getMessage())->toBe('repository failure');
     });
 });

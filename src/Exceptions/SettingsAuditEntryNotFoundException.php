@@ -14,7 +14,7 @@ use function sprintf;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsAuditEntryNotFoundException extends SettingsAuditException
+final class SettingsAuditEntryNotFoundException extends AbstractSettingsAuditException
 {
     public static function forId(int $auditId): self
     {

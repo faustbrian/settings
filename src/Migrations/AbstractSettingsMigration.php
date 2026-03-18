@@ -24,7 +24,7 @@ use function resolve;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-abstract class SettingsMigration extends Migration
+abstract class AbstractSettingsMigration extends Migration
 {
     protected SettingsMigratorInterface $migrator;
 

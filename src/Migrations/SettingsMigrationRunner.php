@@ -30,7 +30,7 @@ use function pathinfo;
  * Runs tracked settings migration files from configured paths.
  *
  * Each migration file is resolved independently and must return a
- * `SettingsMigration` instance, typically an anonymous class. Applied
+ * `AbstractSettingsMigration` instance, typically an anonymous class. Applied
  * migrations are recorded by filename so re-runs only execute pending files.
  *
  * @author Brian Faust <brian@cline.sh>
@@ -136,11 +136,11 @@ final readonly class SettingsMigrationRunner implements SettingsMigrationRunnerI
         return array_values(array_filter($configured, static fn (mixed $path): bool => is_string($path) && $path !== ''));
     }
 
-    private function resolvePath(string $path): SettingsMigration
+    private function resolvePath(string $path): AbstractSettingsMigration
     {
         $migration = $this->files->getRequire($path);
 
-        if ($migration instanceof SettingsMigration) {
+        if ($migration instanceof AbstractSettingsMigration) {
             return $migration;
         }
 

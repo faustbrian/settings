@@ -10,7 +10,7 @@
 namespace Tests\Fixtures\Settings;
 
 use Carbon\CarbonImmutable;
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Cline\Struct\Attributes\Encrypted;
 use DateTimeImmutable;
 use Override;
@@ -20,7 +20,7 @@ use Override;
  * @internal
  * @psalm-immutable
  */
-final readonly class CarrierCredentialSettings extends Settings
+final readonly class CarrierCredentialSettings extends AbstractSettings
 {
     public function __construct(
         #[Encrypted()]

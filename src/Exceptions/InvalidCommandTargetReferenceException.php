@@ -16,7 +16,7 @@ use function sprintf;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class InvalidCommandTargetReferenceException extends InvalidArgumentException implements SettingsException
+final class InvalidCommandTargetReferenceException extends InvalidArgumentException implements SettingsExceptionInterface
 {
     public static function forValue(?string $value): self
     {

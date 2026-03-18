@@ -14,4 +14,4 @@ use LogicException;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-abstract class SettingsRepositoryException extends LogicException implements SettingsException {}
+abstract class AbstractSettingsRepositoryException extends LogicException implements SettingsExceptionInterface {}

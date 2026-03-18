@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Exceptions\SettingsException;
+use Cline\Settings\Exceptions\SettingsExceptionInterface;
 
 describe('settings exception', function (): void {
     test('is a throwable marker interface', function (): void {
-        $reflection = new ReflectionClass(SettingsException::class);
+        $reflection = new ReflectionClass(SettingsExceptionInterface::class);
 
         expect($reflection->isInterface())->toBeTrue()
             ->and($reflection->implementsInterface(Throwable::class))->toBeTrue();

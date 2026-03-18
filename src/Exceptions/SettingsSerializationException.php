@@ -23,7 +23,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsSerializationException extends RuntimeException implements SettingsException
+final class SettingsSerializationException extends RuntimeException implements SettingsExceptionInterface
 {
     /**
      * @param class-string $settingsClass

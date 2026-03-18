@@ -10,3 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added repository-level maintainer guidance in `AGENTS.md`.
 - Initial release
+
+### Changed
+- Renamed public abstract base types to match package naming conventions:
+  `Settings` to `AbstractSettings`,
+  `SettingsMigration` to `AbstractSettingsMigration`,
+  `SettingsException` to `SettingsExceptionInterface`,
+  `SettingsAuditException` to `AbstractSettingsAuditException`,
+  `SettingsMigrationException` to
+  `AbstractSettingsMigrationException`, and
+  `SettingsRepositoryException` to
+  `AbstractSettingsRepositoryException`.

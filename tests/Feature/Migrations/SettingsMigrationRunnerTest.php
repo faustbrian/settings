@@ -115,10 +115,10 @@ describe('settings migration runner', function (): void {
         writeSettingsMigration($path, '2026_03_11_000000_seed_app_settings', <<<'PHP'
 <?php declare(strict_types=1);
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 use Tests\Fixtures\Settings\ShipmentPricingSettings;
 
-return new class() extends SettingsMigration
+return new class() extends AbstractSettingsMigration
 {
     public function up(): void
     {
@@ -163,10 +163,10 @@ PHP);
         writeSettingsMigration($path, '2026_03_11_000001_seed_configured_settings', <<<'PHP'
 <?php declare(strict_types=1);
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 use Tests\Fixtures\Settings\ShipmentPricingSettings;
 
-return new class() extends SettingsMigration
+return new class() extends AbstractSettingsMigration
 {
     public function up(): void
     {
@@ -210,10 +210,10 @@ PHP);
         writeSettingsMigration($path, '2026_03_11_000002_seed_rollback_settings', <<<'PHP'
 <?php declare(strict_types=1);
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 use Tests\Fixtures\Settings\ShipmentPricingSettings;
 
-return new class() extends SettingsMigration
+return new class() extends AbstractSettingsMigration
 {
     public function up(): void
     {

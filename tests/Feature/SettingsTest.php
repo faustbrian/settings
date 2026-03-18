@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Cline\Settings\Support\ResolutionChain;
 use Cline\Settings\Support\ResolutionTarget;
 use Tests\Fixtures\Settings\CarrierCredentialSettings;
 
 describe('settings base class', function (): void {
     test('uses the class name as the default namespace', function (): void {
-        $settings = new readonly class('value') extends Settings
+        $settings = new readonly class('value') extends AbstractSettings
         {
             public function __construct(
                 public string $apiToken,

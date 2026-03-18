@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Exceptions\SettingsException;
-use Cline\Settings\Exceptions\SettingsMigrationException;
+use Cline\Settings\Exceptions\AbstractSettingsMigrationException;
+use Cline\Settings\Exceptions\SettingsExceptionInterface;
 
 describe('settings migration exception', function (): void {
     test('is the base logic exception for migration failures', function (): void {
-        $exception = new class('migration failure') extends SettingsMigrationException {};
+        $exception = new class('migration failure') extends AbstractSettingsMigrationException {};
 
-        expect($exception)->toBeInstanceOf(SettingsMigrationException::class)
+        expect($exception)->toBeInstanceOf(AbstractSettingsMigrationException::class)
             ->toBeInstanceOf(LogicException::class)
-            ->toBeInstanceOf(SettingsException::class)
+            ->toBeInstanceOf(SettingsExceptionInterface::class)
             ->and($exception->getMessage())->toBe('migration failure');
     });
 });

@@ -12,7 +12,7 @@ namespace Cline\Settings\Exceptions;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class StoredSettingTransactionDidNotReturnRecordException extends SettingsRepositoryException
+final class StoredSettingTransactionDidNotReturnRecordException extends AbstractSettingsRepositoryException
 {
     public static function duringSave(): self
     {

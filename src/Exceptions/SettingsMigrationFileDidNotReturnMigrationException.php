@@ -14,12 +14,12 @@ use function sprintf;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsMigrationFileDidNotReturnMigrationException extends SettingsMigrationException
+final class SettingsMigrationFileDidNotReturnMigrationException extends AbstractSettingsMigrationException
 {
     public static function fromPath(string $path): self
     {
         return new self(sprintf(
-            'The settings migration file [%s] did not return a SettingsMigration instance.',
+            'The settings migration file [%s] did not return an AbstractSettingsMigration instance.',
             $path,
         ));
     }

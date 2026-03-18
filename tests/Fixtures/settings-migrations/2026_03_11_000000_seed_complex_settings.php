@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 use Tests\Fixtures\Models\BusinessEntity;
 use Tests\Fixtures\Models\Carrier;
 use Tests\Fixtures\Models\Organization;
@@ -16,7 +16,7 @@ use Tests\Fixtures\Models\User;
 use Tests\Fixtures\Settings\OrganizationMemberSettings;
 use Tests\Fixtures\Settings\ShipmentPricingSettings;
 
-return new class() extends SettingsMigration
+return new class() extends AbstractSettingsMigration
 {
     public function up(): void
     {

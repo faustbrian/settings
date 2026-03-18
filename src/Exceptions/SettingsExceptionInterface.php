@@ -14,4 +14,4 @@ use Throwable;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-interface SettingsException extends Throwable {}
+interface SettingsExceptionInterface extends Throwable {}

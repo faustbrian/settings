@@ -9,7 +9,7 @@
 
 namespace Tests\Fixtures\Settings;
 
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Override;
 
 /**
@@ -17,7 +17,7 @@ use Override;
  * @internal
  * @psalm-immutable
  */
-final readonly class OrganizationMemberSettings extends Settings
+final readonly class OrganizationMemberSettings extends AbstractSettings
 {
     public function __construct(
         public bool $canUsePrioritySupport,

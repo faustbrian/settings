@@ -35,7 +35,7 @@ describe('make settings migration command', function (): void {
         $contents = file_get_contents($files[0]);
         assert(is_string($contents));
 
-        expect($contents)->toContain('extends SettingsMigration')
+        expect($contents)->toContain('extends AbstractSettingsMigration')
             ->and($contents)->toContain('public function up(): void')
             ->and($contents)->toContain('public function down(): void');
 

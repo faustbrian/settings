@@ -9,7 +9,7 @@
 
 namespace Tests\Fixtures\Settings;
 
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Cline\Struct\Attributes\Encrypted;
 use Override;
 
@@ -18,7 +18,7 @@ use Override;
  * @internal
  * @psalm-immutable
  */
-final readonly class BrokenEncodedSettings extends Settings
+final readonly class BrokenEncodedSettings extends AbstractSettings
 {
     public function __construct(
         #[Encrypted()]

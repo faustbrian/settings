@@ -23,7 +23,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class InvalidSettingsPropertyException extends InvalidArgumentException implements SettingsException
+final class InvalidSettingsPropertyException extends InvalidArgumentException implements SettingsExceptionInterface
 {
     /**
      * @param class-string $settingsClass

@@ -14,6 +14,6 @@ describe('settings migration file did not return migration exception', function 
         $exception = SettingsMigrationFileDidNotReturnMigrationException::fromPath('/tmp/migration.php');
 
         expect($exception->getMessage())->toContain('/tmp/migration.php')
-            ->toContain('did not return a SettingsMigration instance');
+            ->toContain('did not return an AbstractSettingsMigration instance');
     });
 });

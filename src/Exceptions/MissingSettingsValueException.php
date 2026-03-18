@@ -25,7 +25,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class MissingSettingsValueException extends RuntimeException implements SettingsException
+final class MissingSettingsValueException extends RuntimeException implements SettingsExceptionInterface
 {
     /**
      * @param class-string $settingsClass

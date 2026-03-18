@@ -12,7 +12,7 @@ namespace Cline\Settings\Exceptions;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsAuditEntryMustBePropertyScopedException extends SettingsAuditException
+final class SettingsAuditEntryMustBePropertyScopedException extends AbstractSettingsAuditException
 {
     public static function forReplayOrRollback(): self
     {

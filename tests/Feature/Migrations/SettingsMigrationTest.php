@@ -8,14 +8,14 @@
  */
 
 use Cline\Settings\Contracts\SettingsMigratorInterface;
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 
 describe('settings migration base class', function (): void {
     test('resolves the migrator interface from the container', function (): void {
         $migrator = Mockery::mock(SettingsMigratorInterface::class);
         $this->app->instance(SettingsMigratorInterface::class, $migrator);
 
-        $migration = new class() extends SettingsMigration
+        $migration = new class() extends AbstractSettingsMigration
         {
             public function up(): void {}
 

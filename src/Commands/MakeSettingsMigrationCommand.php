@@ -98,9 +98,9 @@ final class MakeSettingsMigrationCommand extends Command
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 
-return new class extends SettingsMigration
+return new class extends AbstractSettingsMigration
 {
     public function up(): void
     {

@@ -14,7 +14,7 @@ use function sprintf;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class ReplayableSettingsClassDoesNotExistException extends SettingsAuditException
+final class ReplayableSettingsClassDoesNotExistException extends AbstractSettingsAuditException
 {
     /**
      * @param class-string|string $settingsClass

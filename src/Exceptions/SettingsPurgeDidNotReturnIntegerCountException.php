@@ -12,7 +12,7 @@ namespace Cline\Settings\Exceptions;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsPurgeDidNotReturnIntegerCountException extends SettingsRepositoryException
+final class SettingsPurgeDidNotReturnIntegerCountException extends AbstractSettingsRepositoryException
 {
     public static function fromRepository(): self
     {

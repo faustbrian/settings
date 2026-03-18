@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-use Cline\Settings\Exceptions\SettingsAuditException;
-use Cline\Settings\Exceptions\SettingsException;
+use Cline\Settings\Exceptions\AbstractSettingsAuditException;
+use Cline\Settings\Exceptions\SettingsExceptionInterface;
 
 describe('settings audit exception', function (): void {
     test('is the base invalid argument exception for audit failures', function (): void {
-        $exception = new class('audit failure') extends SettingsAuditException {};
+        $exception = new class('audit failure') extends AbstractSettingsAuditException {};
 
-        expect($exception)->toBeInstanceOf(SettingsAuditException::class)
+        expect($exception)->toBeInstanceOf(AbstractSettingsAuditException::class)
             ->toBeInstanceOf(InvalidArgumentException::class)
-            ->toBeInstanceOf(SettingsException::class)
+            ->toBeInstanceOf(SettingsExceptionInterface::class)
             ->and($exception->getMessage())->toBe('audit failure');
     });
 });

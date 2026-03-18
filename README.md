@@ -24,6 +24,10 @@ composer require cline/settings
 See [DOCS.md](DOCS.md) for installation, configuration, usage, commands, and
 operational workflows.
 
+Concrete settings classes extend `Cline\Settings\AbstractSettings`, and
+settings migrations extend
+`Cline\Settings\Migrations\AbstractSettingsMigration`.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

@@ -156,7 +156,7 @@ The audit table stores:
 
 ### Settings class
 
-A settings class extends `Cline\Settings\Settings` and exposes constructor-
+A settings class extends `Cline\Settings\AbstractSettings` and exposes constructor-
 promoted typed properties. Defaults are declared explicitly through
 `defaults()` or `defaultsFor(...)`, not through constructor signatures.
 
@@ -165,10 +165,10 @@ promoted typed properties. Defaults are declared explicitly through
 
 namespace App\Settings;
 
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Override;
 
-final class ShipmentPricingSettings extends Settings
+final class ShipmentPricingSettings extends AbstractSettings
 {
     public function __construct(
         public float $callBeforeDeliveryFee,
@@ -465,11 +465,11 @@ attribute.
 namespace App\Settings;
 
 use Cline\Struct\Attributes\Encrypted;
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use DateTimeImmutable;
 use Override;
 
-final class CarrierCredentialSettings extends Settings
+final class CarrierCredentialSettings extends AbstractSettings
 {
     public function __construct(
         #[Encrypted]
@@ -505,10 +505,10 @@ and attach it with `#[CastWith(...)]`.
 namespace App\Settings;
 
 use Cline\Struct\Attributes\CastWith;
-use Cline\Settings\Settings;
+use Cline\Settings\AbstractSettings;
 use Override;
 
-final class CarrierCredentialSettings extends Settings
+final class CarrierCredentialSettings extends AbstractSettings
 {
     public function __construct(
         #[CastWith(CustomMoneyCast::class)]

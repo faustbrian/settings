@@ -22,7 +22,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsRenameConflictException extends RuntimeException implements SettingsException
+final class SettingsRenameConflictException extends RuntimeException implements SettingsExceptionInterface
 {
     public static function forTarget(
         string $settingsClass,

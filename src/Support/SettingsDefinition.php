@@ -9,9 +9,9 @@
 
 namespace Cline\Settings\Support;
 
+use Cline\Settings\AbstractSettings;
 use Cline\Settings\Exceptions\InvalidSettingsPropertyException;
 use Cline\Settings\Exceptions\MissingSettingsValueException;
-use Cline\Settings\Settings;
 use Cline\Struct\Contracts\CastInterface;
 use Cline\Struct\Metadata\ClassMetadata;
 use Cline\Struct\Metadata\MetadataFactory;
@@ -75,7 +75,8 @@ final readonly class SettingsDefinition
     /**
      * Return the storage namespace for the reflected settings class.
      *
-     * Classes extending the package base {@see Settings} type may override the
+     * Classes extending the package base {@see AbstractSettings} type may
+     * override the
      * namespace used for persistence. Non-package classes fall back to their
      * fully qualified class name so external implementations still receive a
      * stable storage key.
@@ -85,7 +86,7 @@ final readonly class SettingsDefinition
         /** @var class-string<object> $class */
         $class = $this->settingsClass;
 
-        if (!is_subclass_of($class, Settings::class)) {
+        if (!is_subclass_of($class, AbstractSettings::class)) {
             return $class;
         }
 
@@ -106,7 +107,7 @@ final readonly class SettingsDefinition
         /** @var class-string<object> $class */
         $class = $this->settingsClass;
 
-        if (!is_subclass_of($class, Settings::class)) {
+        if (!is_subclass_of($class, AbstractSettings::class)) {
             return [];
         }
 
@@ -221,7 +222,7 @@ final readonly class SettingsDefinition
             }
         }
 
-        /** @var class-string<Settings> $class */
+        /** @var class-string<AbstractSettings> $class */
         $class = $this->settingsClass;
 
         return $class::create($values);

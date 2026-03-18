@@ -14,7 +14,7 @@ use function sprintf;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsMigrationPropertyAlreadyExistsException extends SettingsMigrationException
+final class SettingsMigrationPropertyAlreadyExistsException extends AbstractSettingsMigrationException
 {
     public static function forProperty(string $settingsClass, string $property): self
     {

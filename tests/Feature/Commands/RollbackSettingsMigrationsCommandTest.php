@@ -133,9 +133,9 @@ function noOpMigrationStub(): string
     return <<<'PHP'
 <?php declare(strict_types=1);
 
-use Cline\Settings\Migrations\SettingsMigration;
+use Cline\Settings\Migrations\AbstractSettingsMigration;
 
-return new class() extends SettingsMigration
+return new class() extends AbstractSettingsMigration
 {
     public function up(): void
     {

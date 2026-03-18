@@ -12,7 +12,7 @@ namespace Cline\Settings\Exceptions;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsAuditEntryCannotBeRolledBackException extends SettingsAuditException
+final class SettingsAuditEntryCannotBeRolledBackException extends AbstractSettingsAuditException
 {
     public static function becauseValueIsMissing(): self
     {

@@ -15,7 +15,7 @@ use RuntimeException;
 /**
  * @author Brian Faust <brian@cline.sh>
  */
-final class SettingsSnapshotEncodingException extends RuntimeException implements SettingsException
+final class SettingsSnapshotEncodingException extends RuntimeException implements SettingsExceptionInterface
 {
     public static function fromJsonException(JsonException $previous): self
     {

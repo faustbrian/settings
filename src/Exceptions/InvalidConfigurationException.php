@@ -17,7 +17,7 @@ use InvalidArgumentException;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class InvalidConfigurationException extends InvalidArgumentException implements SettingsException
+final class InvalidConfigurationException extends InvalidArgumentException implements SettingsExceptionInterface
 {
     public static function conflictingMorphKeyMaps(): self
     {
